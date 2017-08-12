@@ -7,7 +7,6 @@ import android.support.v7.widget.DefaultItemAnimator
 import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.GridLayoutManager
 import android.view.View
-import com.example.danwe.pruebastutorial.Titular
 import kotlinx.android.synthetic.main.activity_main.*
 
 /**

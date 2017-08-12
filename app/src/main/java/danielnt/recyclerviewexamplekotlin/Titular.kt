@@ -1,4 +1,4 @@
-package com.example.danwe.pruebastutorial
+package danielnt.recyclerviewexamplekotlin
 
 /**
  * Created by DanielNT on 11/08/2017.

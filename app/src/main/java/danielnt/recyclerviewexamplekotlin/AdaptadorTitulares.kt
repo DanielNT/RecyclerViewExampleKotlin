@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import com.example.danwe.pruebastutorial.Titular
 
 /**
  * Created by DanielNT on 12/08/2017.
