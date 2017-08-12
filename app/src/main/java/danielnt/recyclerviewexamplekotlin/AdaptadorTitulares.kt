@@ -8,15 +8,18 @@ import android.widget.TextView
 import com.example.danwe.pruebastutorial.Titular
 
 /**
- * Created by danwe on 12/08/2017.
+ * Created by DanielNT on 12/08/2017.
  */
-class AdaptadorTitulares(val datos: ArrayList<Titular>) : RecyclerView.Adapter<AdaptadorTitulares.TitularesViewHolder>() {
+class AdaptadorTitulares(val datos: ArrayList<Titular>)
+    : RecyclerView.Adapter<AdaptadorTitulares.TitularesViewHolder>(), View.OnClickListener {
+
+    private var listener: View.OnClickListener? = null
 
     override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): TitularesViewHolder {
         val itemView = LayoutInflater.from(parent!!.context)
                 .inflate(R.layout.listitem_titular, parent, false)
 
-
+        itemView.setOnClickListener(this)
         return TitularesViewHolder(itemView)
     }
 
@@ -36,6 +39,16 @@ class AdaptadorTitulares(val datos: ArrayList<Titular>) : RecyclerView.Adapter<A
         fun bindTitular(t: Titular) {
             txtTitulo.text = t.titulo
             txtSubtitulo.text = t.subtitulo
+        }
+    }
+
+    fun setOnClickListener(listener: View.OnClickListener) {
+        this.listener = listener
+    }
+
+    override fun onClick(view: View) {
+        if (listener != null) {
+            listener!!.onClick(view)
         }
     }
 
