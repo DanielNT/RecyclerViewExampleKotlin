@@ -40,5 +40,27 @@ class MainActivity : AppCompatActivity() {
         //adding ItemDecoration and ItemAnimator
         recView.addItemDecoration(DividerItemDecoration(this,DividerItemDecoration.VERTICAL))
         recView.itemAnimator= DefaultItemAnimator()
+
+        //buttons
+        BtnMover.setOnClickListener({
+            val aux = datos?.get(1)
+            datos?.set(1, datos!!.get(2))
+            datos?.set(2, aux!!)
+            adaptador.notifyItemMoved(1, 2)
+
+        })
+
+        BtnEliminar.setOnClickListener({
+            if (datos?.size!! >= 2) {
+                datos?.removeAt(1)
+                adaptador.notifyItemRemoved(1)
+            }
+        })
+
+        BtnInsertar.setOnClickListener({
+            datos?.add(1, Titular("Nuevo titular", "Subtitulo nuevo titular"))
+            adaptador.notifyItemInserted(1)
+        })
+
     }
 }
